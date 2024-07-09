@@ -7,6 +7,16 @@ const QRScanner = () => {
   const [scanResult, setScanResult] = useState(null);
   const webcamRef = useRef(null);
 
+  const isURL = (str) => {
+    const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocole
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // nom de domaine
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // adresse IP (v4) 
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port et chemin
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // chaîne de requête
+      '(\\#[-a-z\\d_]*)?$','i'); // fragment ancre
+    return !!pattern.test(str);
+  };
+
   const handleScan = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
     if (!imageSrc) return;
@@ -23,8 +33,12 @@ const QRScanner = () => {
 
       const code = jsQR(imageData.data, imageData.width, imageData.height);
       if (code) {
-        setScanResult(code.data);
-        window.location.href = code.data;
+        if (isURL(code.data)) {
+          setScanResult(code.data);
+          window.location.href = code.data;
+        } else {
+          alert("Le code scanné n'est pas un lien valide.");
+        }
       }
     };
   }, []);

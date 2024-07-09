@@ -60,6 +60,7 @@ const QRScanner = () => {
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         videoConstraints={videoConstraints}
+        className="webcam" // Ajoutez cette ligne
       />
       {scanResult && (
         <p>Résultat du scan : <a href={scanResult}>{scanResult}</a></p>

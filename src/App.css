@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+/* src/App.css */
+
+.webcam {
+  width: 100%;
+  max-width: 320px; /* Taille par défaut pour les écrans plus grands */
+  height: auto;
+}
+
+/* Media query pour les écrans plus petits (téléphones) */
+@media (max-width: 600px) {
+  .webcam {
+    max-width: 240px; /* Réduisez la taille pour les écrans plus petits */
+  }
+}

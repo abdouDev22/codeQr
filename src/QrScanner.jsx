@@ -21,14 +21,19 @@ const QRScanner = () => {
     width: 320,
   };
 
+  const videoConstraints = {
+    facingMode: { exact: "environment" } // Utiliser la caméra arrière
+  };
+
   return (
     <div>
-      <h1>Scanner de QR Code</h1>
+      <h1>Scanner le QR Code</h1>
       <QrScanner
         delay={300}
         style={previewStyle}
         onError={handleError}
         onScan={handleScan}
+        constraints={videoConstraints} // Ajouter les contraintes vidéo
       />
       {scanResult && (
         <p>Résultat du scan : <a href={scanResult.text}>{scanResult.text}</a></p>

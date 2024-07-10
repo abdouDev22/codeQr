@@ -1,4 +1,4 @@
-:
+
 
 # QR Scanner App
 

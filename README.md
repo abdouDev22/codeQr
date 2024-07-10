@@ -2,7 +2,7 @@
 
 # QR Scanner App
 
-Cette application est une application React créée avec Vite qui utilise la caméra de l'appareil pour scanner des codes QR. Si le code QR scanné contient un lien, l'application ouvre automatiquement le lien. Si le code QR scanné n'est pas un lien, une alerte est affichée.
+Cette application est une application React crée avec Vite qui utilise la caméra de l'appareil pour scanner des codes QR. Si le code QR scanné contient un lien, l'application ouvre automatiquement le lien. Si le code QR scanné n'est pas un lien, une alerte est affichée.
 
 ## Fonctionnalités
 
@@ -19,7 +19,7 @@ Cette application est une application React créée avec Vite qui utilise la cam
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/votre-nom-utilisateur/qr-scanner-app.git
+   git clone https://github.com/abdouDev22/codeQr.git
    cd qr-scanner-app
     ```
 

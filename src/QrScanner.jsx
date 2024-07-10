@@ -54,7 +54,7 @@ const QRScanner = () => {
 
   return (
     <div>
-      <h1>Scanner de QR Code</h1>
+      <h1>Scanner un QR Code</h1>
       <Webcam
         audio={false}
         ref={webcamRef}
